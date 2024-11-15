@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode & Light Mode</title>
+    <style>
+        /* Common Styles */
+        body {
+            transition: background-color 0.3s, color 0.3s;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Light Mode Styles */
+        body.light-mode {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .light-mode .toggle-input {
+            background-color: #ccc;
+        }
+        .light-mode .toggle-input:before {
+            background-color: #fff;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+        .dark-mode .toggle-input {
+            background-color: #666;
+        }
+        .dark-mode .toggle-input:before {
+            background-color: #222;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <div class="container">
+        <h1>Dark Mode & Light Mode</h1>
+        <label class="toggle-label" for="theme-toggle">Toggle Dark Mode</label>
+        <input type="checkbox" id="theme-toggle" class="toggle-checkbox">
+        <label class="toggle-input" for="theme-toggle"></label>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('change', function() {
+            document.body.classList.toggle('dark-mode', themeToggle.checked);
+        });
+    </script>
+</body>
+</html>

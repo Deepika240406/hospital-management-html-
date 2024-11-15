@@ -1,0 +1,53 @@
+<html>
+    <body>
+
+
+<section class="work">
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="hours">
+                    <h2>Working Hours</h2>
+                    <div class="time">
+                        <div class="booking">Mon-Wed</div>
+                        <div class="booking">8AM-7PM</div>
+                        <div class="booking">
+                            <button type="button" class="btn-white book-btn" data-day="Mon-Wed">
+                                <i class="fas fa-calendar-week"></i>Book
+                            </button>
+                        </div>
+                    </div>
+                    <div class="time">
+                        <div class="booking">Thursday</div>
+                        <div class="booking">8AM-7PM</div>
+                        <div class="booking">
+                            <button type="button" class="btn-white book-btn" data-day="Thursday">
+                                <i class="fas fa-calendar-week"></i>Book
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Similar structure for other days -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Add event listeners to all "Book" buttons
+    document.querySelectorAll('.book-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            var day = this.getAttribute('data-day'); // Get the day from the data attribute
+            bookAppointment(day); // Call function to book appointment
+        });
+    });
+
+    // Function to simulate booking appointment (replace with actual booking logic)
+    function bookAppointment(day) {
+        // You can implement the booking logic here
+        // For now, let's just show an alert with the booked day
+        alert("Appointment booked for " + day);
+    }
+</script>
+</body>
+</html>
